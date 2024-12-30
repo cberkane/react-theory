@@ -7,7 +7,6 @@ const Loading: FC = () => {
 
 const PageBar: FC = () => {
     const data = useLoaderData();
-    console.log('loaded data', data);
 
     return (
         <div>
