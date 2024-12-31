@@ -1,2 +1,3 @@
 import { Todo } from "./types/todo.type";
-export { Todo };
+import { delay, addTodo, fetchPosts, fetchTodos } from "./utils/fetch";
+export { Todo, delay, addTodo, fetchPosts, fetchTodos, };

@@ -9,6 +9,7 @@ const routes: RouteObject[] = [
     {
         path: "/",
         element: <Layout />,
+        errorElement: <p>Erroring out...</p>,
         children: [
             {
                 path: "foo",
@@ -22,7 +23,6 @@ const routes: RouteObject[] = [
                     return { posts: await fetchPosts().then(response => response.json()) };
                 }
             },
-
         ]
     }
 ];
