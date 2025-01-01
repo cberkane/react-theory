@@ -1,4 +1,5 @@
 import { CSSProperties, FC, useEffect } from "react";
+import { delay } from "shared"
 import { useForm } from "react-hook-form";
 
 
@@ -23,10 +24,11 @@ const SimpleForm: FC = () => {
             birthDate: null!,
         }
     });
-    const { errors, isDirty, isSubmitSuccessful } = formState;
+    const { errors, isDirty, isSubmitSuccessful, isSubmitting } = formState;
 
-    const submitForm = (data: FormValues) => {
-        console.log('data submitted', data);
+    const submitForm = async (data: FormValues): Promise<void> => {
+        await delay(3000);
+        console.log('data', data);
     }
 
     useEffect(() => {
@@ -91,7 +93,10 @@ const SimpleForm: FC = () => {
                     />
                     <p style={errorStyle}>{errors.birthDate?.message}</p>
                 </div>
-                <button type="submit" disabled={!isDirty}>Envoyer</button>
+                <button type="submit" disabled={!isDirty}>
+                    {isSubmitting && 'Envoi...'}
+                    {!isSubmitting && 'Envoyer'}
+                </button>
             </form>
         </div>
     )
