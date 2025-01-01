@@ -6,7 +6,7 @@
 
 2 - A la racine de l'application, créer un router avec [`createBrowserRouter()`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/App.tsx#L5).
 
-3 - Fournir le router grâce [`<RouterProvider />`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/App.tsx#L6).
+3 - Fournir le router grâce au [`<RouterProvider />`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/App.tsx#L6).
 
 4 - Définir [`Layout.tsx`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/Layout.tsx), le composant parent de toutes les routes.
 
