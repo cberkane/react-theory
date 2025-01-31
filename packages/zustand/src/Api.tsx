@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { useApiTodoStore } from "./store/api-todo.store";
+import { useApiTodoStore } from "./store/todo-api.store";
 
 const Api: FC = () => {
 
@@ -11,17 +11,13 @@ const Api: FC = () => {
 
     return (
         <div className="b">
-            <h1>Zustand + API</h1>
-            {loading &&
-                <p>Loading...</p>
-            }
+            <h1>Zustand with API</h1>
+            {error && <p>{error}</p>}
+            {loading && <p>Loading...</p>}
             {todos.length !== 0 &&
-                <div>
+                <ul>
                     {todos.map(todo => <li>{todo.title}</li>)}
-                </div>
-            }
-            {error &&
-                <p>{error}</p>
+                </ul>
             }
         </div>
     );
