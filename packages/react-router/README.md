@@ -12,6 +12,12 @@
 
 4 - Il est possible de récupérer les infos de navigation via le hook [`useNavigation()`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/Layout.tsx#L6).
 
+### Page not found
+
+1 - Ajouter une [wildcard](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/routes.tsx#L29) pour capturer toutes les routes non existantes.
+
+2 - Utiliser l'élément [`<Navigate />`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/routes.tsx#L30) pour rediriger vers la page 404.
+
 ### Routing et data loading
 
 1 - Associer un [`loader: handler()`](https://github.com/cberkane/react-theory/blob/master/packages/react-router/src/routes.tsx#L16) à une route.

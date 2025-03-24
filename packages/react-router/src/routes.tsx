@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom"
+import { Navigate, RouteObject } from "react-router-dom"
 import Layout from "./Layout";
 import Foo from "./pages/Foo";
 import Bar from "./pages/Bar";
@@ -9,7 +9,9 @@ const routes: RouteObject[] = [
     {
         path: "/",
         element: <Layout />,
-        errorElement: <p>Erroring out...</p>,
+        errorElement: <>
+            <p>Erroring out...</p>
+        </>,
         children: [
             {
                 path: "foo",
@@ -23,6 +25,10 @@ const routes: RouteObject[] = [
                     return { posts: await fetchPosts().then(response => response.json()) };
                 }
             },
+            {
+                path: "*",
+                element: <Navigate to="/404" replace />
+            }
         ]
     }
 ];
